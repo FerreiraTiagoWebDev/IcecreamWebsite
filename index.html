@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+    ></script>
+    <title>Tiago's IceCream's</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="" class="logo">Tiago's IceCreams</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
+      <ul class="menu">
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- Grid container-->
+    <section class="grid-container">
+      <div class="left-side-container">
+        <div class="item1 itemImg">
+          <img src="/img/strawberry.png" alt="" />
+        </div>
+        <div class="item-c itemDescription">
+          <h4>Strawberry</h4>
+          <p>"A classic"</p>
+        </div>
+        <div class="item2 itemImg">
+          <img src="/img/forestfruit.png" alt="" />
+        </div>
+        <div class="item-a itemDescription">
+          <h4>Cherry</h4>
+          <p>"Good to give to your girlfriend"</p>
+        </div>
+        <div class="item3 itemImg"><img src="/img/blueberry.png" alt="" /></div>
+        <div class="item-b itemDescription">
+          <h4>Blueberry</h4>
+          <p>"Pretty nice"</p>
+        </div>
+        <div class="item4 itemImg"><img src="/img/orange.png" alt="" /></div>
+        <div class="item-d itemDescription">
+          <h4>Orange</h4>
+          <p>"From time to time"</p>
+        </div>
+        <div class="item5 itemImg"><img src="/img/pistachio.png" alt="" /></div>
+        <div class="item-e itemDescription">
+          <h4>Pistachio</h4>
+          <p>"For adventurous people"</p>
+        </div>
+        <div class="item6 itemImg"><img src="/img/almond.png" alt="" /></div>
+        <div class="item-f itemDescription">
+          <h4>Almond</h4>
+          <p>"Vegan! And gluten free!"</p>
+        </div>
+      </div>
+      <div class="mid-side-container">
+        <video id="background-video" autoplay loop muted>
+          <source src="icecreamvideo.mp4" type="video/mp4" />
+        </video>
+        <div class="select1">
+          <h1>Choose your flavours!</h1>
+          <br />
+          <p>You can Combine up to 3 Flavours in your Icecream!</p>
+          <br />
+          <h4>How Would You Like Your Icecream?</h4>
+          <br />
+          <form id="mainForm" class="alertSubmit">
+            <div>
+              <input
+                class="typeOfIcecream"
+                type="radio"
+                id="cup"
+                required
+                name="recipient"
+                value="Cup"
+                onchange="typefunction(event)"
+                onClick="AppearTypeImg(this.value)"
+              />
+                <label for="cup">Cup</label><br />
+              <input
+                class="typeOfIcecream"
+                type="radio"
+                id="cone"
+                name="recipient"
+                value="Cone"
+                onchange="typefunction(event)"
+                onClick="AppearTypeImg(this.value)"
+              />
+                <label for="cone">Cone</label><br />
+              <br />
+            </div>
+            <div>
+              <label for="first flavour">First Flavour</label>
+              <select
+                name="first flavour"
+                id="firstFlavourId"
+                onchange="fla1function(event), AppearFlavourImg1(this.value)"
+              >
+                <option class="secondFlavour" value="None">None</option>
+                <option class="firstFlavour" value="Cherry">Cherry</option>
+                <option class="firstFlavour" value="Blueberry">
+                  Blueberry
+                </option>
+                <option class="firstFlavour" value="Strawberry">
+                  Strawberry
+                </option>
+                <option class="firstFlavour" value="Orange">Orange</option>
+                <option class="firstFlavour" value="Pistachio">
+                  Pistachio
+                </option>
+                <option class="firstFlavour" value="Almond">
+                  Almond
+                </option></select
+              ><br /><br /><br />
+              <label for="second flavour">Second Flavour</label>
+              <select
+                name="second flavour"
+                id="secondFlavourId"
+                onchange="fla2function(event), AppearFlavourImg2(this.value)"
+              >
+                <option class="secondFlavour" value="None">None</option>
+                <option class="secondFlavour" value="Cherry">Cherry</option>
+                <option class="secondFlavour" value="Blueberry">
+                  Blueberry
+                </option>
+                <option class="secondFlavour" value="Strawberry">
+                  Strawberry
+                </option>
+                <option class="secondFlavour" value="Orange">Orange</option>
+                <option class="secondFlavour" value="Pistachio">
+                  Pistachio
+                </option>
+                <option class="secondFlavour" value="Almond">
+                  Almond
+                </option></select
+              ><br /><br /><br />
+              <label for="third flavour">Third Flavour</label>
+              <select
+                name="third flavour"
+                id="thirdFlavourId"
+                onchange="fla3function(event), AppearFlavourImg3(this.value)"
+              >
+                <option class="thirdFlavour" value="None">None</option>
+                <option class="thirdFlavour" value="Cherry">Cherry</option>
+                <option class="thirdFlavour" value="Blueberry">
+                  Blueberry
+                </option>
+                <option class="thirdFlavour" value="Strawberry">
+                  Strawberry
+                </option>
+                <option class="thirdFlavour" value="Orange">Orange</option>
+                <option class="thirdFlavour" value="Pistachio">
+                  Pistachio
+                </option>
+                <option class="thirdFlavour" value="Almond">
+                  Almond
+                </option></select
+              ><br /><br />
+
+              <button
+                type="submit"
+                id="submit"
+                onclick="typefunction(event), fla1function(), fla2function(), fla2function()"
+                value=""
+              >
+                Submit
+              </button>
+              <button type="reset" id="reset" value="reset" onClick="resetForm(event)">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="right-side-container">
+        <h3>Your icecream:</h3>
+        <div id="result1">Cup or Cone?</div>
+        <div id="result2">First Flavour: None</div>
+        <div id="result3">Second Flavour: None</div>
+        <div id="result4">Third Flavour: None</div>
+        <div id="ecard"></div>
+        <div id="ecard1"></div>
+        <div id="ecard2"></div>
+        <div id="ecard3"></div>
+
+      </div>
+    </section>
+    <footer>
+      <div class="copyright">Copyright 2021</div>
+    </footer>
+  </body>
+  <script src="/app.js"></script>
+</html>
