@@ -11,26 +11,40 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
     ></script>
-    <title>Tiago's IceCream's</title>
+    <title>Tiago's IceCreams</title>
   </head>
   <body>
-    <header class="header">
-      <a href="" class="logo">Tiago's IceCreams</a>
-      <input class="menu-btn" type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn"
-        ><span class="navicon"></span
-      ></label>
-      <ul class="menu">
-        <li><a href="#work">Our Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#careers">Careers</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <nav>
+      <div class="logo">
+        <h4>Tiago's IceCreams</h4>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+        </li>
+        <li>
+          <a href="#">Work</a>
+        </li>
       </ul>
-    </header>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
 
     <!-- Grid container-->
     <section class="grid-container">
@@ -90,7 +104,6 @@
                 required
                 name="recipient"
                 value="Cup"
-                onchange="typefunction(event)"
                 onClick="AppearTypeImg(this.value)"
               />
                 <label for="cup">Cup</label><br />
@@ -100,7 +113,6 @@
                 id="cone"
                 name="recipient"
                 value="Cone"
-                onchange="typefunction(event)"
                 onClick="AppearTypeImg(this.value)"
               />
                 <label for="cone">Cone</label><br />
@@ -111,7 +123,7 @@
               <select
                 name="first flavour"
                 id="firstFlavourId"
-                onchange="fla1function(event), AppearFlavourImg1(this.value)"
+                onchange="AppearFlavourImg1(this.value)"
               >
                 <option class="secondFlavour" value="None">None</option>
                 <option class="firstFlavour" value="Cherry">Cherry</option>
@@ -133,7 +145,7 @@
               <select
                 name="second flavour"
                 id="secondFlavourId"
-                onchange="fla2function(event), AppearFlavourImg2(this.value)"
+                onchange="AppearFlavourImg2(this.value)"
               >
                 <option class="secondFlavour" value="None">None</option>
                 <option class="secondFlavour" value="Cherry">Cherry</option>
@@ -155,7 +167,7 @@
               <select
                 name="third flavour"
                 id="thirdFlavourId"
-                onchange="fla3function(event), AppearFlavourImg3(this.value)"
+                onchange="AppearFlavourImg3(this.value)"
               >
                 <option class="thirdFlavour" value="None">None</option>
                 <option class="thirdFlavour" value="Cherry">Cherry</option>
@@ -177,27 +189,33 @@
               <button
                 type="submit"
                 id="submit"
-                onclick="typefunction(event), fla1function(), fla2function(), fla2function()"
+                onclick="fla1function(), fla2function(), fla2function()"
                 value=""
               >
                 Submit
               </button>
-              <button type="reset" id="reset" value="reset" onClick="resetForm(event)">Reset</button>
+              <button
+                type="reset"
+                id="reset"
+                value="reset"
+                onClick="resetForm(event)"
+              >
+                Reset
+              </button>
             </div>
           </form>
         </div>
       </div>
       <div class="right-side-container">
-        <h3>Your icecream:</h3>
-        <div id="result1">Cup or Cone?</div>
+        <h2>Your icecream:</h2>
+        <!-- <div id="result1">Cup or Cone?</div>
         <div id="result2">First Flavour: None</div>
         <div id="result3">Second Flavour: None</div>
-        <div id="result4">Third Flavour: None</div>
+        <div id="result4">Third Flavour: None</div> -->
         <div id="ecard"></div>
         <div id="ecard1"></div>
         <div id="ecard2"></div>
         <div id="ecard3"></div>
-
       </div>
     </section>
     <footer>

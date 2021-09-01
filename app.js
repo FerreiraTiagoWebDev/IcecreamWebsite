@@ -1,44 +1,29 @@
-// const BTN = document.getElementById("submit");
-// const TYPE = document.getElementsByClassName("typeOfIcecream").checked;
-// const FLAVOUR1 = document.getElementsByClassName("firstFlavour").value;
-// const FLAVOUR2 = document.getElementsByClassName("secondFlavour").value;
-// const FLAVOUR3 = document.getElementsByClassName("thirdFlavour").value;
+//NAV BAR
 
-// function myFunction() {
-//   let recipient = document.forms[0];
-//   let txt1 = "";
-//   let i;
-//   for (i = 0; i < recipient.length; i++) {
-//     if (recipient[i].checked) {
-//       txt1 = txt1 + recipient[i].value + " ";
-//     }
-//   }
+const navSlide = () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links li");
 
-//   document.getElementById("result1").innerHTML =
-//     "You ordered an icecream in a: " + txt1;
-// }
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav-active");
 
-function typefunction(event) {
-  let selectElement = event.target;
-  let value1 = selectElement.value;
-  document.getElementById("result1").innerHTML = "Icecream: " + value1;
-}
+    //Animate Links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 7 + 0.55
+        }s`;
+      }
+    });
+    //Burger Animation
+    burger.classList.toggle("toggle");
+  });
+};
 
-function fla1function(event) {
-  let selectElement = event.target;
-  let value1 = selectElement.value;
-  document.getElementById("result2").innerHTML = "First Flavour: " + value1;
-}
-function fla2function(event) {
-  let selectElement = event.target;
-  let value2 = selectElement.value;
-  document.getElementById("result3").innerHTML = "Second flavour: " + value2;
-}
-function fla3function(event) {
-  let selectElement = event.target;
-  let value3 = selectElement.value;
-  document.getElementById("result4").innerHTML = "Third flavour: " + value3;
-}
+navSlide();
 
 //Appear images on result
 //CUP or Cone
@@ -46,9 +31,10 @@ function AppearTypeImg(bg) {
   if (bg == "Cup") {
     document.getElementById("ecard3").innerHTML =
       '<img width="auto" height="400" src="img/cupImg.png">';
+
   } else if (bg == "Cone") {
     document.getElementById("ecard3").innerHTML =
-      '<img width="auto" height="350" src="img/cone.png">';
+      '<img width="auto" height="300" src="img/cone.png">';
   }
 }
 //Flavour 1 Image
@@ -136,10 +122,10 @@ function AppearFlavourImg3(td) {
 function resetForm(event) {
   document.getElementById("ecard").innerHTML =
     '<img width="0" height="0" src="img/almondball.png">';
-    document.getElementById("ecard1").innerHTML =
+  document.getElementById("ecard1").innerHTML =
     '<img width="0" height="0" src="img/almondball.png">';
-    document.getElementById("ecard2").innerHTML =
+  document.getElementById("ecard2").innerHTML =
     '<img width="0" height="0" src="img/almondball.png">';
-    document.getElementById("ecard3").innerHTML =
+  document.getElementById("ecard3").innerHTML =
     '<img width="0" height="0" src="img/almondball.png">';
 }
